@@ -79,6 +79,21 @@ const computeResult = () => {
   right = "";
 };
 
+const onReset = () => {
+  left = "";
+  right = "";
+  operator = null;
+  setResult(0);
+};
+
+const invertResult = () => {
+  setResult(-Number(result.textContent));
+};
+
+const divideResultBy100 = () => {
+  setResult(Number(result.textContent) / 100);
+};
+
 for (const number of numbers) {
   number.addEventListener("click", () => onNumberClick(number.textContent));
 }
@@ -88,3 +103,12 @@ for (const operatorElement of [plus, minus, product, division]) {
     onOperatorClick(operatorElement.textContent)
   );
 }
+
+equals.addEventListener("click", computeResult);
+reset.addEventListener("click", onReset);
+plusMinus.addEventListener("click", invertResult);
+percent.addEventListener("click", divideResultBy100);
+
+dot.addEventListener("click", () => {
+  alert("not implemented");
+});
