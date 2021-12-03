@@ -15,6 +15,7 @@ body {
 
 main {
   background: #fbfbfb;
+  box-shadow: 4px 6px 12px #ccc;
 }
 
 .result {
@@ -41,6 +42,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .line > div:last-of-type {
